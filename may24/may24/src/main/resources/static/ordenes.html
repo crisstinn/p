@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App</title>
+  <script src="ordenes.js"></script>
+  <link rel="stylesheet" type="text/css" href="ordenes.css" />
+</head>
+<body onload="cargaPagina()">
+<header>
+    <nav>
+        <div class="menu-left">
+            <a href="#inicio">Inicio</a>
+            <a href="#ingresarOrdenes">Nuevas Ordenes</a>
+            <a href="#ver_Operaciones">Ver Operaciones</a>
+        </div>
+    </nav>
+ </header>
+ <main>
+   <article id="inicio">
+     <section>
+       Bienvenido al Programa de Gestión de acciones
+       <span id="nombre-inicio"></span>
+     </section>
+     <section>
+       <table id="ordenesTabla" border="1">
+         <thead>
+         <tr>
+           <th>ID</th>
+           <th>Usuario</th>
+           <th>Nombre Acción</th>
+           <th>Precio</th>
+           <th>Número Acciones</th>
+             <th>Compra/Venta</th>
+             <th>ejecutado</th>
+         </tr>
+         </thead>
+         <tbody>
+         <!-- Las filas de la tabla se añaden aquí -->
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <button type="button" onclick="verOrdenes()">Ver Operaciones</button>
+    </section>
+  </article>
+     <article id="ingresarOrdenes">
+         <section>
+             Ingreso de ordenes
+             <span id="ingreso_ordenes"></span>
+         </section>
+         <section>
+             <form id="formularioOrden">
+                 <label for="usuario">Usuario:</label>
+                 <input type="text" id="usuario" name="usuario" required><br><br>
+
+                 <label for="nombreAccion">Nombre Acción:</label>
+                 <input type="text" id="nombreAccion" name="nombreAccion" required><br><br>
+
+                 <label for="precio">Precio:</label>
+                 <input type="number" id="precio" name="precio" required><br><br>
+
+                 <label for="numAcciones">Número Acciones:</label>
+                 <input type="number" id="numAcciones" name="numAcciones" required><br><br>
+
+                 <label for="compraVenta">Compra/Venta:</label>
+                 <select id="compraVenta" name="compraVenta" required>
+                     <option value="compra">Compra</option>
+                     <option value="venta">Venta</option>
+                 </select><br><br>
+                 <button type="button" onclick="enviarOrden()">Enviar Orden</button>
+             </form>
+         </section>
+
+     </article>
+     <article id="ver_Operaciones">
+         <section>
+             Operaciones
+             <span id="ver-operaciones"></span>
+         </section>
+         <section>
+             <table id="operacionesTabla" border="1">
+                 <thead>
+                 <tr>
+                     <th>ID</th>
+                     <th>OrdenVenta</th>
+                     <th>OrdenCompra</th>
+                     <th>Número de acciones</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <!-- Las filas de la tabla se añaden aquí -->
+                 </tbody>
+             </table>
+         </section>
+         <section>
+             <button type="button" onclick="verOperaciones()">Ver Operaciones</button>
+         </section>
+     </article>
+</main>
+<footer>
+  Examen 2024 © PAT
+  <script>document.write(new Date().getFullYear());</script>
+</footer>
+</body>
+</html>

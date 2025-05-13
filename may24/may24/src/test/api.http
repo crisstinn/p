@@ -1,0 +1,43 @@
+### Ejemplo de probar el api
+@url = http://localhost:8080
+
+#PETICIÓN POST
+POST {{url}}/api/ordenes
+Content-Type: application/json
+
+{
+  "usuario": "atilanof",
+  "nombreAccion": "Telefonica",
+  "precio": 1000,
+  "numAcciones": 50,
+  "compraVenta": "venta",
+  "ejecutado": false
+  
+}
+
+###Ejecuto una actualización
+PUT {{url}}/api/ordenes/actualiza
+Content-Type: application/json
+
+{ "id": 7,
+  "usuario": "atilanof",
+  "nombreAccion": "Telefonica",
+  "precio": 500,
+  "numAcciones": 50,
+  "compraVenta": "venta",
+  "ejecutado": false
+  
+}
+
+
+###PETICIÓN GET
+GET {{url}}/api/ordenes/1
+Content-Type: application/json
+
+###PETICIÓN DELETE
+DELETE {{url}}/api/ordenes/1
+Content-Type: application/json
+
+
+###PETICIÓN POST
+POST {{url}}/api/operacion/cruzar
